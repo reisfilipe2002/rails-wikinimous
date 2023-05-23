@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class = "d-flex flex-row justify-content-center">
+    <div class = "list-group col-sm-8 col-sm-offset-2">
+      <% @articles.each do |article| %>
+      <article class = "list-group-item d-block text-left mb-5 p-4">
+          <h2 cl>
+            <%=(link_to article.title, article_path(article))%>
+          </h2>
+            <p><%=article.content%></p>
+      </article>
+        <% end %>
+    </div>
+  </div>
+
+  <p><%= link_to '+ Add new article', new_article_path %></p>
+</div>
